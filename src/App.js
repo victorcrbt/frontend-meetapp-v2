@@ -1,11 +1,17 @@
 import React from 'react';
+import { Router } from 'react-router-dom';
 
 import './config/ReactotronConfig';
 
-import Test from '~/pages/Test';
+import Routes from './routes/index';
+import history from './services/history';
 
 function App() {
-  return <Test />;
+  return (
+    <Router history={history}>
+      <Routes />
+    </Router>
+  );
 }
 
 export default App;
