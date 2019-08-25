@@ -3,6 +3,7 @@ import { takeLatest, call, all, put } from 'redux-saga/effects';
 import { signInSuccess, signFailure } from './actions';
 
 import api from '~/services/api';
+import history from '~/services/history';
 
 export function* signIn({ payload }) {
   try {
@@ -13,6 +14,8 @@ export function* signIn({ payload }) {
     const { token, user } = response.data;
 
     yield put(signInSuccess(token, user));
+
+    history.push('/dashboard');
   } catch (err) {
     yield put(signFailure());
   }
