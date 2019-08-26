@@ -13,8 +13,6 @@ export function* signIn({ payload }) {
 
     const { token, user } = response.data;
 
-    console.tron.log(user);
-
     yield put(signInSuccess(token, user));
     history.push('/dashboard');
   } catch (err) {
@@ -34,7 +32,12 @@ export function* signUp({ payload }) {
   }
 }
 
+export function signOut() {
+  history.push('/');
+}
+
 export default all([
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
+  takeLatest('@auth/SIGN_OUT', signOut),
 ]);
