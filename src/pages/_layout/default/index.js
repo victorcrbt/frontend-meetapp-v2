@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 import Header from '~/components/Header';
 
@@ -8,7 +8,10 @@ export default function DefaultLayout({ children }) {
   return (
     <Container>
       <Header />
-      {children}
+
+      <Content>
+        {children}
+      </Content>
     </Container>
   );
 }
