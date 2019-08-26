@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { format, parseISO } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 import { Link } from 'react-router-dom';
 import { MdAdd, MdRemoveRedEye } from 'react-icons/md';
+
+import api from '~/services/api';
 
 import {
   Container,
@@ -15,9 +19,23 @@ import {
   PageButton,
 } from './styles';
 
-const data = [1, 2, 3, 4, 5];
-
 export default function Dashboard() {
+  const [meetups, setMeetups] = useState([]);
+
+  useEffect(() => {
+    async function loadMeetups() {
+      try {
+        const response = await api.get('/organizing');
+
+        setMeetups(response.data);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+
+    loadMeetups();
+  }, [])
+
   return (
     <Container>
       <Header>
@@ -30,14 +48,18 @@ export default function Dashboard() {
       </Header>
 
       <Meetups>
-        {data.map(meetup => (
-          <Meetup>
-            <MeetupTitle>Meetup de ReactJS</MeetupTitle>
+        {meetups.map(meetup => (
+          <Meetup key={meetup.id}>
+            <MeetupTitle>{meetup.title}</MeetupTitle>
 
             <div>
-              <MeetupDate>24 de Junho, às 20h</MeetupDate>
+              <MeetupDate>
+                {format(parseISO(meetup.date), "dd 'de' MMMM', às' HH'h'", {
+                  locale: pt,
+                })}
+              </MeetupDate>
               <Link to={`/meetup/${meetup}`}>
-                <MdRemoveRedEye size={20} color='#eee' />
+                <MdRemoveRedEye size={20} color="#eee" />
               </Link>
             </div>
           </Meetup>
