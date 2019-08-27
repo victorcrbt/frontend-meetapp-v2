@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { format, parseISO } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import { MdAdd, MdRemoveRedEye } from 'react-icons/md';
 
@@ -29,7 +30,7 @@ export default function Dashboard() {
 
         setMeetups(response.data);
       } catch (err) {
-        console.log(err);
+        toast.error('Erro interno no servidor.');
       }
     }
 
@@ -41,7 +42,7 @@ export default function Dashboard() {
       <Header>
         <PageTitle>Meus meetups</PageTitle>
 
-        <NewMeetupButton type="button">
+        <NewMeetupButton to="/meetup/new">
           <MdAdd size={24} color="#fff" />
           Nova meetup
         </NewMeetupButton>

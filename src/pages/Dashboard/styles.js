@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { lighten } from 'polished';
 
 export const Container = styled.div`
@@ -18,7 +19,7 @@ export const PageTitle = styled.h1`
   color: #eee;
 `;
 
-export const NewMeetupButton = styled.button`
+export const NewMeetupButton = styled(Link)`
   height: 42px;
   padding: 0 15px;
   background: #f94d6a;
