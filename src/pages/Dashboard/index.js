@@ -34,7 +34,7 @@ export default function Dashboard() {
     }
 
     loadMeetups();
-  }, [])
+  }, []);
 
   return (
     <Container>
@@ -58,7 +58,7 @@ export default function Dashboard() {
                   locale: pt,
                 })}
               </MeetupDate>
-              <Link to={`/meetup/${meetup}`}>
+              <Link to={`/meetup/${meetup.id}`}>
                 <MdRemoveRedEye size={20} color="#eee" />
               </Link>
             </div>

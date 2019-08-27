@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten, darken } from 'polished';
+import { lighten } from 'polished';
 
 export const Container = styled.div`
   margin-top: 25px;
@@ -21,7 +21,7 @@ export const PageTitle = styled.h1`
 export const NewMeetupButton = styled.button`
   height: 42px;
   padding: 0 15px;
-  background: #F94D6A;
+  background: #f94d6a;
   color: #fff;
   font-size: 18px;
   border: 0;
@@ -67,7 +67,7 @@ export const Meetup = styled.article`
       transition: fill 0.2s ease;
 
       &:hover {
-        fill: ${lighten(0.85, '#000')}
+        fill: ${lighten(0.85, '#000')};
       }
     }
   }

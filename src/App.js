@@ -2,6 +2,7 @@ import React from 'react';
 import { Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 
 import './config/ReactotronConfig';
 
@@ -20,6 +21,7 @@ function App() {
           <Routes />
 
           <GlobalStyles />
+          <ToastContainer autoClose={3000} position="top-center" />
         </Router>
       </PersistGate>
     </Provider>
