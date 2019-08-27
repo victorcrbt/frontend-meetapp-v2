@@ -22,20 +22,39 @@ import {
 
 export default function Dashboard() {
   const [meetups, setMeetups] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
 
   useEffect(() => {
     async function loadMeetups() {
       try {
-        const response = await api.get('/organizing');
+        const response = await api.get('/organizing', {
+          params: {
+            page,
+          },
+        });
 
-        setMeetups(response.data);
+        setMeetups(response.data.meetups);
+        setTotalPages(response.data.total_pages);
       } catch (err) {
         toast.error('Erro interno no servidor.');
       }
     }
 
     loadMeetups();
-  }, []);
+  }, [page]);
+
+  function prevPage() {
+    if (page === 1) return;
+
+    setPage(page - 1);
+  }
+
+  function nextPage() {
+    if (page >= totalPages) return;
+
+    setPage(page + 1);
+  }
 
   return (
     <Container>
@@ -68,9 +87,13 @@ export default function Dashboard() {
       </Meetups>
 
       <Pagination>
-        <PageButton>Anterior</PageButton>
+        <PageButton disabled={page === 1 && true} onClick={prevPage}>
+          Anterior
+        </PageButton>
 
-        <PageButton>Próxima</PageButton>
+        <PageButton disabled={page >= totalPages && true} onClick={nextPage}>
+          Próxima
+        </PageButton>
       </Pagination>
     </Container>
   );

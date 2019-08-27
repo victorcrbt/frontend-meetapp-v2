@@ -99,4 +99,9 @@ export const PageButton = styled.button`
   &:hover {
     background: ${lighten(0.04, '#f94d6a')};
   }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
 `;
