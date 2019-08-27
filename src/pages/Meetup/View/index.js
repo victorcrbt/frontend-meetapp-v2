@@ -54,6 +54,7 @@ export default function NewMeetup({ match }) {
       setEditing(false);
     } catch (err) {
       toast.error(err.response.data.error);
+      setEditing(false);
     }
   }
 
@@ -66,7 +67,7 @@ export default function NewMeetup({ match }) {
       toast.success('Meetup excluido com sucesso!');
       history.push('/dashboard');
     } catch (err) {
-      toast.error(err.message);
+      toast.error(err.response.data.error);
     }
   }
 
