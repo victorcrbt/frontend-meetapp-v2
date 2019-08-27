@@ -2,10 +2,10 @@ import styled from 'styled-components';
 import { lighten } from 'polished';
 
 export const Container = styled.div`
-  width: 100%;
+  display: flex;
 
   button {
-    width: 100%;
+    width: 315px;
     max-width: 315px;
     height: 50px;
     border: 0;
@@ -17,6 +17,11 @@ export const Container = styled.div`
 
     &:hover {
       background: ${lighten(0.02, '#F94D6A')};
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
   }
 `;
