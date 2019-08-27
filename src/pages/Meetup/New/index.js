@@ -1,4 +1,8 @@
 import React from 'react';
+import { toast } from 'react-toastify';
+
+import api from '~/services/api';
+import history from '~/services/history';
 
 import BannerInput from '~/components/BannerInput';
 import TextInput from '~/components/TextInput';
@@ -9,8 +13,17 @@ import SubmitButton from '~/components/SubmitButton';
 import { Container, PageTitle, MeetupForm } from './styles';
 
 export default function NewMeetup() {
-  function handleSubmit(data) {
-    console.log(data);
+  async function handleSubmit(data) {
+    try {
+      const meetup = await api.post('/meetups', data);
+
+      const { id } = meetup.data;
+
+      toast.success('Meetup inserido com sucesso!');
+      history.push(`/meetup/${id}`)
+    } catch (err) {
+      toast.error(err.response.data.error)
+    }
   }
 
   return (
