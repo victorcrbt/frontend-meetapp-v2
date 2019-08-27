@@ -55,7 +55,7 @@ export default function Dashboard() {
 
             <div>
               <MeetupDate>
-                {format(parseISO(meetup.date), "dd 'de' MMMM', às' HH'h'", {
+                {format(parseISO(meetup.date), "dd 'de' MMMM 'de' yyyy', às' HH'h'mm", {
                   locale: pt,
                 })}
               </MeetupDate>
