@@ -12,6 +12,8 @@ import SubmitButton from '~/components/SubmitButton';
 
 import { Container, PageTitle, MeetupForm } from './styles';
 
+import newMeetupValidator from '~/validators/newMeetupValidator';
+
 export default function NewMeetup() {
   async function handleSubmit(data) {
     try {
@@ -30,7 +32,7 @@ export default function NewMeetup() {
     <Container>
       <PageTitle>Novo meetup</PageTitle>
 
-      <MeetupForm onSubmit={handleSubmit}>
+      <MeetupForm onSubmit={handleSubmit} schema={newMeetupValidator}>
         <BannerInput name="banner_id" />
 
         <TextInput name="title" placeholder="Digite o título do seu meetup" />
