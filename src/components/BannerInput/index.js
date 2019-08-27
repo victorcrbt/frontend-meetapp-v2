@@ -9,8 +9,8 @@ import { Container } from './styles';
 export default function BannerInput({ styles, name, ...rest }) {
   const { registerField, defaultValue } = useField('banner');
 
-  const [preview, setPreview] = useState(defaultValue && defaultValue.url);
-  const [file, setFile] = useState(defaultValue && defaultValue.id);
+  const [preview, setPreview] = useState();
+  const [file, setFile] = useState();
 
   const ref = useRef();
 
@@ -23,6 +23,13 @@ export default function BannerInput({ styles, name, ...rest }) {
       });
     }
   }, [ref]); // eslint-disable-line
+
+  useEffect(() => {
+    if (defaultValue) {
+      setPreview(defaultValue.url);
+      setFile(defaultValue.id)
+    }
+  }, [defaultValue]);
 
   async function handleImageChange(e) {
     const data = new FormData();
@@ -55,7 +62,7 @@ export default function BannerInput({ styles, name, ...rest }) {
           data-file={file}
           ref={ref}
           onChange={handleImageChange}
-          {...rest}
+          name={name}
         />
       </label>
     </Container>
