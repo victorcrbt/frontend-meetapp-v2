@@ -40,11 +40,11 @@ export default function NewMeetup() {
           name="description"
           placeholder="Descreva o seu meetup em algumas linhas"
         />
-        <DateInput name="date" placeholder="Digite a data do seu meetup" />
         <TextInput
           name="location"
           placeholder="Digite o local em que ocorerrá o meetup"
         />
+        <DateInput name="date" placeholder="Digite a data do seu meetup" />
 
         <ConfirmButton type="submit">Salvar meetup</ConfirmButton>
       </MeetupForm>
