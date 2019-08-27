@@ -8,9 +8,9 @@ import BannerInput from '~/components/BannerInput';
 import TextInput from '~/components/TextInput';
 import TextArea from '~/components/TextArea';
 import DateInput from '~/components/DateInput';
-import SubmitButton from '~/components/SubmitButton';
 
-import { Container, PageTitle, MeetupForm } from './styles';
+
+import { Container, PageTitle, MeetupForm, ConfirmButton } from './styles';
 
 import newMeetupValidator from '~/validators/newMeetupValidator';
 
@@ -46,7 +46,7 @@ export default function NewMeetup() {
           placeholder="Digite o local em que ocorerrá o meetup"
         />
 
-        <SubmitButton type="submit">Cadastrar</SubmitButton>
+        <ConfirmButton type="submit">Salvar meetup</ConfirmButton>
       </MeetupForm>
     </Container>
   );
