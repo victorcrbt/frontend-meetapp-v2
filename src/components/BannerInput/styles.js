@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
@@ -7,6 +7,12 @@ export const Container = styled.div`
   border: 1px dashed rgba(255, 255, 255, 0.3);
   border-radius: 5px;
   overflow: hidden;
+
+  ${props =>
+    props.disabled &&
+    css`
+      cursor: not-allowed;
+    `}
 
   label {
     div {

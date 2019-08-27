@@ -6,7 +6,7 @@ import api from '~/services/api';
 
 import { Container } from './styles';
 
-export default function BannerInput({ styles, name, ...rest }) {
+export default function BannerInput({ styles, name, disabled, ...rest }) {
   const { registerField, defaultValue } = useField('banner');
 
   const [preview, setPreview] = useState();
@@ -45,7 +45,7 @@ export default function BannerInput({ styles, name, ...rest }) {
   }
 
   return (
-    <Container styles={styles}>
+    <Container styles={styles} disabled={disabled}>
       <label htmlFor="banner">
         <div>
           {preview ? (
@@ -63,6 +63,7 @@ export default function BannerInput({ styles, name, ...rest }) {
           ref={ref}
           onChange={handleImageChange}
           name={name}
+          disabled={disabled}
         />
       </label>
     </Container>
