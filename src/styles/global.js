@@ -26,7 +26,7 @@ export default createGlobalStyle`
     background: linear-gradient(#22202C, #402845)
   }
 
-  body, input, button {
+  body, input, button, textarea {
     font-size: 14px;
     font-family: 'Roboto', Verdanda, sans-serif;
   }
