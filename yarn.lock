@@ -3092,6 +3092,11 @@ data-urls@^1.0.0, data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
+date-fns@^2.0.0-beta.5:
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.0.0-beta.5.tgz#90885db3772802d55519cd12acd49de56aca1059"
+  integrity sha512-GS5yi964NDFNoja9yOdWFj9T97T67yLrUeJZgddHaVfc/6tHWtX7RXocuubmZkNzrZUZ9BqBOW7jTR5OoWjJ1w==
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -8241,6 +8246,13 @@ react-error-overlay@^6.0.1:
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-6.0.1.tgz#b8d3cf9bb991c02883225c48044cb3ee20413e0f"
   integrity sha512-V9yoTr6MeZXPPd4nV/05eCBvGH9cGzc52FN8fs0O0TVQ3HYYf1n7EgZVtHbldRq5xU9zEzoXIITjYNIfxDDdUw==
 
+react-icons@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-3.7.0.tgz#64fe46231fabfeea27895edeae6c3b78114b8c8f"
+  integrity sha512-7MyPwjIhuyW0D2N3s4DEd0hGPGFf0sK+IIRKhc1FvSpZNVmnUoGvHbmAwzGJU+3my+fvihVWgwU5SDtlAri56Q==
+  dependencies:
+    camelcase "^5.0.0"
+
 react-is@^16.6.0, react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4, react-is@^16.8.6:
   version "16.9.0"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.9.0.tgz#21ca9561399aad0ff1a7701c01683e8ca981edcb"
@@ -8458,6 +8470,11 @@ recursive-readdir@2.2.2:
   integrity sha512-nRCcW9Sj7NuZwa2XvH9co8NPeXUBhZP7CRKJtU+cS6PW9FpCIFoI5ib0NT1ZrbNuPoRy0ylyCaUL8Gih4LSyFg==
   dependencies:
     minimatch "3.0.4"
+
+redux-persist@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/redux-persist/-/redux-persist-5.10.0.tgz#5d8d802c5571e55924efc1c3a9b23575283be62b"
+  integrity sha512-sSJAzNq7zka3qVHKce1hbvqf0Vf5DuTVm7dr4GtsqQVOexnrvbV47RWFiPxQ8fscnyiuWyD2O92DOxPl0tGCRg==
 
 redux-saga@^1.0.5:
   version "1.0.5"
